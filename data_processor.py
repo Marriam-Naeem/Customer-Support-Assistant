@@ -19,7 +19,7 @@ class DataProcessor:
     
     def __init__(self, 
                  output_dir: str = "processed_data",
-                 chunk_size: int = 300,
+                 chunk_size: int = 500,
                  chunk_overlap: int = 50):
         """Initialize the data processor.
         
@@ -58,12 +58,7 @@ class DataProcessor:
         text = re.sub(r'\b[A-Z]{2}\d{2}[A-Z0-9]{10,30}\b', '<IBAN>', text)  # IBAN
         text = re.sub(r'\b\d{12,20}\b', '<ACCOUNT_NO>', text)  # Numeric account numbers
 
-        # 4. Anonymize currency values and amounts
-        text = re.sub(r'\b(PKR|Rs\.?)\s?\d{1,3}(,\d{3})*(\.\d+)?\b', '<AMOUNT>', text, flags=re.IGNORECASE)
-        text = re.sub(r'\b(USD|EUR|GBP)\s?\d{1,3}(,\d{3})*(\.\d+)?\b', '<AMOUNT>', text, flags=re.IGNORECASE)
-
-        # 5. Remove URLs
-        text = re.sub(r'http\S+|www\.\S+', '<URL>', text)
+        
 
         # 6. Normalize whitespace
         text = re.sub(r'\s+', ' ', text).strip()
