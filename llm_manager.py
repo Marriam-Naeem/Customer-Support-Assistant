@@ -341,11 +341,12 @@ if __name__ == "__main__":
     )
     
     # Example banking QA pairs for fine-tuning
-    training_data = [
-        {"question": "How do I reset my password?", "answer": "You can reset your password by clicking on 'Forgot Password' on the login screen and following the steps."},
-        {"question": "What is the daily ATM withdrawal limit?", "answer": "The daily ATM withdrawal limit for standard accounts is PKR 50,000."},
-        # Add more examples...
-    ]
+    with open("finetune_data.json", "r") as f:
+        training_data = json.load(f)
+
+    
+
+ 
     
     # Fine-tune (commented out for testing)
     # llm_manager.fine_tune_on_banking_data(training_data, epochs=1)
