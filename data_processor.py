@@ -56,9 +56,7 @@ class DataProcessor:
 
         # 3. Anonymize IBAN and account numbers
         text = re.sub(r'\b[A-Z]{2}\d{2}[A-Z0-9]{10,30}\b', '<IBAN>', text)  # IBAN
-        text = re.sub(r'\b\d{12,20}\b', '<ACCOUNT_NO>', text)  # Numeric account numbers
-
-        
+        text = re.sub(r'\b\d{12,20}\b', '<ACCOUNT_NO>', text)  # Numeric account numbers        
 
         # 6. Normalize whitespace
         text = re.sub(r'\s+', ' ', text).strip()
@@ -207,6 +205,6 @@ if __name__ == "__main__":
     docs = processor.process_directory("data")
     processor.save_processed_data(docs)
     
-    # Add a new document
-    num_added = processor.add_new_document("data/new_document.pdf")
-    print(f"Added {num_added} chunks from new document")
+    # # Add a new document
+    # num_added = processor.add_new_document("data/new_document.pdf")
+    # print(f"Added {num_added} chunks from new document")

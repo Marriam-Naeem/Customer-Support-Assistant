@@ -188,7 +188,7 @@ if __name__ == "__main__":
     vector_manager.create_from_processed_data("processed_data/processed_documents.json")
     
     # Test retrieval
-    docs = vector_manager.retrieve_relevant_chunks("How do I reset my password?")
+    docs = vector_manager.retrieve_relevant_chunks("what is the account type of little champs account is it saving or current ?")
     for doc in docs:
         print(f"Content: {doc.page_content[:100]}...")
         print(f"Metadata: {doc.metadata}")
