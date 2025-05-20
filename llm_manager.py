@@ -28,8 +28,8 @@ class LLMManager:
     """Manager for handling LLM operations."""
     
     def __init__(self,
-                 model_name: str = "google/flan-t5-base",
-                 model_type: str = "seq2seq",
+                 model_name: str = "prd101-wd/phi1_5-bankingqa-merged",
+                 model_type: str = "casual",
                  use_lora: bool = True,
                  device: str = "auto",
                  output_dir: str = "model_output",
@@ -335,10 +335,10 @@ class LLMManager:
 if __name__ == "__main__":
     # Initialize with a smaller model for testing
     llm_manager = LLMManager(
-        model_name="google/flan-t5-base",
-        model_type="seq2seq",
+        model_name="prd101-wd/phi1_5-bankingqa-merged",
+        model_type="causal",
         use_lora=True,
-        quantize=False  # Set to True for production
+        quantize=False  
     )
     
     # Example banking QA pairs for fine-tuning
