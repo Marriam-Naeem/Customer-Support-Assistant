@@ -322,7 +322,7 @@ if __name__ == "__main__":
     
     # Example conversation
     user_id = "user123"
-    query = "How do I reset my password?"
+    query = "What are the main features of these EFU Insurance Plans?"
     
     # Process query
     result = rag_pipeline.generate_response(query)

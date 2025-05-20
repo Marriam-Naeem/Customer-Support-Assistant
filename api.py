@@ -71,10 +71,10 @@ os.makedirs(VECTOR_DIR, exist_ok=True)
 data_processor = DataProcessor(output_dir=PROCESSED_DIR)
 vector_manager = VectorDatabaseManager(persist_directory=VECTOR_DIR)
 llm_manager = LLMManager(
-    model_name="google/flan-t5-base",  # Change to your preferred model
-    model_type="seq2seq",
-    use_lora=True,
-    quantize=True
+    model_name="./models/phi_finetuned",  # Change to your preferred model
+    model_type="causal",
+    use_lora=False,
+    quantize=False
 )
 rag_pipeline = RAGPipeline(vector_manager, llm_manager)
 conversation_manager = ConversationManager()

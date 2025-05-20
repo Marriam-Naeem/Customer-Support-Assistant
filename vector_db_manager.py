@@ -4,7 +4,8 @@ from typing import List, Dict, Any, Optional, Union
 import numpy as np
 
 # Import embedding models and vector store
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
+
 from langchain.vectorstores import Chroma
 from langchain.docstore.document import Document
 
