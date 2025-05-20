@@ -19,8 +19,8 @@ class DataProcessor:
     
     def __init__(self, 
                  output_dir: str = "processed_data",
-                 chunk_size: int = 500,
-                 chunk_overlap: int = 50):
+                 chunk_size: int = 550,
+                 chunk_overlap: int = 200):
         """Initialize the data processor.
         
         Args:
@@ -48,11 +48,11 @@ class DataProcessor:
         Returns:
             Cleaned and anonymized text
         """
-        # 1. Anonymize email addresses
-        text = re.sub(r'\b[\w\.-]+@[\w\.-]+\.\w+\b', '<EMAIL>', text)
+        # # 1. Anonymize email addresses
+        # text = re.sub(r'\b[\w\.-]+@[\w\.-]+\.\w+\b', '<EMAIL>', text)
 
-        # 2. Anonymize phone numbers (various formats)
-        text = re.sub(r'(\+\d{1,3}[\s\-]?)?\(?\d{3,5}\)?[\s\-]?\d{3,4}[\s\-]?\d{3,4}', '<PHONE>', text)
+        # # 2. Anonymize phone numbers (various formats)
+        # text = re.sub(r'(\+\d{1,3}[\s\-]?)?\(?\d{3,5}\)?[\s\-]?\d{3,4}[\s\-]?\d{3,4}', '<PHONE>', text)
 
         # 3. Anonymize IBAN and account numbers
         text = re.sub(r'\b[A-Z]{2}\d{2}[A-Z0-9]{10,30}\b', '<IBAN>', text)  # IBAN
@@ -112,6 +112,7 @@ class DataProcessor:
                 
             # Clean and split the documents
             cleaned_docs = []
+            
             for doc in docs:
                 if isinstance(doc, dict):
                     content = doc["page_content"]
