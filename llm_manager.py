@@ -337,7 +337,7 @@ if __name__ == "__main__":
         model_name="prd101-wd/phi1_5-bankingqa-merged",
         model_type="causal",
         use_lora=True,
-        quantize=False  # Set to True for production
+        quantize=False  
     )
     
     # Example banking QA pairs for fine-tuning
