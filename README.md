@@ -9,6 +9,7 @@ An AI-powered customer support assistant for the **banking domain**, built with 
 - [System Architecture](#system-architecture)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Setup](#setup)
 - [Data Preprocessing](#data-preprocessing)
 - [Model Fine-tuning](#model-fine-tuning)
 - [RAG Pipeline](#rag-pipeline)
@@ -53,6 +54,33 @@ This project explores how RAG combined with a fine-tuned LLM can improve custome
 - Scikit-learn, Pandas, NumPy  
 - Phi-1.5 + LoRA fine-tuning  
 - Streamlit / Flask  
+
+## Setup
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/Marriam-Naeem/Customer-Support-Assistant.git
+    cd Customer-Support-Assistant
+    ```
+
+2. Create a virtual environment (recommended):
+    ```bash
+    python -m venv venv
+    source venv/bin/activate   # Linux/Mac
+    venv\Scripts\activate      # Windows
+    ```
+
+3. Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. Run the application:
+    ```bash
+    streamlit run app.py
+    ```
+
+5. (Optional) Update configuration in `config.py` for custom datasets, embeddings, or model paths.
 
 ## Data Preprocessing
 - Custom text cleaning and anonymization.  
