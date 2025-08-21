@@ -15,7 +15,6 @@ An AI-powered customer support assistant for the **banking domain**, built with 
 - [RAG Pipeline](#rag-pipeline)
 - [Security Guardrails](#security-guardrails)
 - [Future Work](#future-work)
-- [Contributing](#contributing)
 
 ## Introduction
 Banking customers often struggle to understand complex products and services. Existing chatbots rely heavily on keyword matching and lack domain expertise.  
